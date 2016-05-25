@@ -24,10 +24,8 @@ pinged.
 
 
 ```
-docker pull equivalent/health_check_nginx:latest:1.0
-
+docker pull equivalent/health_check_nginx:1.0
 # ..or
-
 docker pull equivalent/health_check_nginx:latest
 
 docker run -p 80:80 -d equivalent/health_check_nginx
