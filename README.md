@@ -3,11 +3,11 @@
 Just simple docker container running NginX responding to:
 
 ```
-curl -v localhost/                  # 404 Not Found
-curl -v localhost/health-check      # 200 OK
-curl -v localhost/health-check.html # 200 OK
-curl -v localhost/healthcheck       # 200 OK
-curl -v localhost/healthcheck.html  # 200 OK
+/                  # 404 Not Found
+/health-check      # 200 OK
+/health-check.html # 200 OK
+/healthcheck       # 200 OK
+/healthcheck.html  # 200 OK
 ```
 
 ## Usage example
@@ -23,6 +23,12 @@ pinged.
 ```
 docker pull equivalent/health_check_nginx
 docker run -p 80:80 -d equivalent/health_check_nginx
+
+curl -v localhost/                  # 404 Not Found
+curl -v localhost/health-check      # 200 OK
+curl -v localhost/health-check.html # 200 OK
+curl -v localhost/healthcheck       # 200 OK
+curl -v localhost/healthcheck.html  # 200 OK
 ```
 
 ### AWS Elastic Beanstalk example
