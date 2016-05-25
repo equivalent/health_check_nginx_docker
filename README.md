@@ -1,6 +1,6 @@
 # Health Check Nginx Docker image
 
-Just simple docker container running NginX responding to:
+Just simple docker image running NginX responding to:
 
 ```
 /                  # 404 Not Found
