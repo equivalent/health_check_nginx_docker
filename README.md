@@ -1,5 +1,8 @@
 # Health Check Nginx Docker image
 
+* Docker repo: https://hub.docker.com/r/equivalent/health_check_nginx/
+* Releases: https://hub.docker.com/r/equivalent/health_check_nginx/tags/
+
 Just simple docker image running NginX responding to:
 
 ```
@@ -15,13 +18,18 @@ Just simple docker image running NginX responding to:
 This is docker image is useful if you are configuring server that is running a worker server
 running background tasks independent of the Web-Server.
 
-That means that the BG server does not necessary need to respond to http requests)
+That means that the BG server does not necessary need to respond to http requests
 yet you still want to expose http health-check endpoint that can be
 pinged.
 
 
 ```
-docker pull equivalent/health_check_nginx
+docker pull equivalent/health_check_nginx:latest:1.0
+
+# ..or
+
+docker pull equivalent/health_check_nginx:latest
+
 docker run -p 80:80 -d equivalent/health_check_nginx
 
 curl -v localhost/                  # 404 Not Found
@@ -61,7 +69,7 @@ container will restart as well.
     },
     {
       "name": "health_check_nginx",
-      "image": "equivalent/health_check_nginx"
+      "image": "equivalent/health_check_nginx",
       "essential": true,
       "portMappings": [
         {
