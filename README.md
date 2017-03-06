@@ -91,7 +91,7 @@ this container.
 ## Building docker on your local machine
 
 ```
-git clone git@github.com:equivalent/health_check_nginx_docker.git
+git clone git@github.com/equivalent/health_check_nginx_docker.git
 docker build -t=nginx-health .
 docker run -p 80:80 -it nginx-health
 ```
