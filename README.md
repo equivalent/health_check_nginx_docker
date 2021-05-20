@@ -37,7 +37,7 @@ curl -v localhost/healthcheck       # 200 OK
 curl -v localhost/healthcheck.html  # 200 OK
 ```
 
-### AWS Elastic Beanstalk example
+### AWS Elastic Beanstalk Multi-container Docker running on 64bit Amazon Linux example
 
 If you have AWS ElasticBeanstalk enviroment (EB), you can
 configure "healthcheck endpoint"
@@ -80,6 +80,9 @@ container will restart as well.
 }
 ```
 
+### AWS ElasticBeanstalk EB Docker Amazon Linux 2
+
+if you use ` EB Docker Amazon Linux 2` this will work due to EB  issue https://github.com/aws/elastic-beanstalk-roadmap/issues/163
 
 ### Other examples
 
