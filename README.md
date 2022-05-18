@@ -37,6 +37,29 @@ curl -v localhost/healthcheck       # 200 OK
 curl -v localhost/healthcheck.html  # 200 OK
 ```
 
+### AWS Elastic Beanstalk - Docker running on 64bit Amazon Linux 2/3.4.13 (docker-compose)
+
+docker-compose.yml
+
+```
+version: '3'
+services:
+  health_check:
+    image: equivalent/health_check_nginx:1.0
+    ports:
+      - '80:80'
+    depends_on:
+      - background-worker
+  background-worker:
+    image: my-company/my-bg-worker-app:latest
+    deploy:
+      restart_policy:
+        condition: on-failure
+        delay: 5s
+        max_attempts: 3
+        window: 120s
+```
+
 ### AWS Elastic Beanstalk Multi-container Docker running on 64bit Amazon Linux example
 
 If you have AWS ElasticBeanstalk enviroment (EB), you can
