@@ -121,3 +121,11 @@ git clone git@github.com:equivalent/health_check_nginx_docker.git
 docker build -t=nginx-health .
 docker run -p 80:80 -it nginx-health
 ```
+
+
+### Build prod version
+
+```
+docker build  --platform=linux/amd64  -t equivalent/health_check_nginx:1.0.1 .
+docker push equivalent/health_check_nginx:1.0.1
+```
